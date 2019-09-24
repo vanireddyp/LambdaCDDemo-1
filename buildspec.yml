@@ -1,13 +1,12 @@
---- 
-artifacts: 
-  files: 
+version: 0.1
+phases:
+  install:
+   runtime-versions:
+    models: 10
+    commands:
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket pdomala-lambda-pipeline --output-template-file outputSamTemplate.yaml
+artifacts:
+  type: zip
+  files:
     - samTemplate.yaml
     - outputSamTemplate.yaml
-  type: zip
-phases: 
-  install: 
-    runtime-versions: 
-      commands: 
-        - "aws cloudformation package --template-file samTemplate.yaml --s3-bucket pdomala-lambda-pipeline --output-template-file outputSamTemplate.yaml"
-      modules: 10
-version: 0.1
