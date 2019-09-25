@@ -4,7 +4,7 @@ phases:
    runtime-versions:
     models: 10
     commands:
-      - "aws cloudformation package --template-file samTemplate.yaml --s3-bucket vanireddyp-lambda-pipeline --output-template-file outputSamTemplate.yaml"
+      - "aws cloudformation package --template-file samTemplate.yaml --s3-bucket pdomala-lambda-pipeline1 --output-template-file outputSamTemplate.yaml"
 artifacts:
   type: zip
   files:
